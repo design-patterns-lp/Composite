@@ -27,7 +27,6 @@ class TourTest {
                 
                 Tour tour1 = new Tour();
                 tour1.setNomeDestino(passeio);
-                System.out.println(tour1.getNomeDestino());
                 assertEquals("Viagem: Trip for USA\n" +
                         "Viagem: Flight to Alaska\n" +
                         "Viagem: Flight to Arizona\n" +
@@ -35,5 +34,17 @@ class TourTest {
                         "Viagem: Flight to New York\n" +
                         "Ponto Turístico: Statue of Liberty - Beleza Natural: Não\n" +
                         "Ponto Turístico: White House - Beleza Natural: Não\n", tour1.getNomeDestino());
+        }
+
+        @Test
+        void deveRetornarExecacaoTourSemDestino() {
+                try {
+                        Tour tour = new Tour();
+                        tour.getNomeDestino();
+                        fail();
+                }
+                catch (NullPointerException e) {
+                        assertEquals("Tour sem destino definido", e.getMessage());
+                }
         }
 }

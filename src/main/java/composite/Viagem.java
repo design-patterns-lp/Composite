@@ -17,10 +17,11 @@ public class Viagem extends Destino{
 
     public String getDestino(){
         String output = "";
-        output = "Viagem: " + this.getDestino() + "\n";
+        output = "Viagem: " + this.getLocal() + "\n";
         for(Destino destino : destinos){
             output += destino.getDestino();
         }
         return output;
     }
+
 }
